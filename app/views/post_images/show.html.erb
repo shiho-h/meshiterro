@@ -43,8 +43,8 @@
                 <!-- #↓ここに追加 -->
                 <li>
                 <% if @post_image.user == current_user %>
-                <%= link_to "削除", post_image_path(@post_image), method: :delete %>
-                <% end %>
+  <%= link_to "削除", post_image_path(@post_image), method: :delete %>
+<% end %>
                 </li>
               </ul>
               <div class="post-content-inner mt-20">
@@ -66,7 +66,7 @@
                     <div class="comment-body bb">
                       <div class="comment-avatar">
                         <div class="avatar">
-                          <%= image_tag('sample-author1.jpg', style: "width: 60px; height: 60px;") %>
+                          <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
                         </div>
                       </div>
                       <div class="comment-text">
